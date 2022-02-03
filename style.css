@@ -1,0 +1,138 @@
+.box{
+    border-radius: 8px;
+    height: 40px;
+    width: 80px;
+    margin: 60px auto;
+}
+
+.box1{
+    background-color: mediumblue;
+}
+
+.box2{
+    background-color: mediumorchid;
+}
+
+/*transformación*/
+
+.box:hover {
+    transform: scale(2);
+}
+
+/*transición*/
+.box2 {
+    transition:all;
+    transition-duration: 3s;
+
+   /* transition: all 2s;*/
+}
+
+.circle1, .circle2, .circle3,
+.circle4, .circle5 {
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+    margin: 20px;
+}
+
+.circle1{
+    background-color: midnightblue;
+    transition: all 1.5s ease;
+}
+.circle2{
+    background-color: orange;
+    transition: all 1.5s ease-in;
+}
+.circle3{
+    background-color: mediumvioletred;
+    transition: all 1.5s ease-in-out;
+}
+.circle4{
+    background-color: red;
+    transition: all 1.5s ease-out;
+}
+.circle5{
+    background-color: rosybrown;
+    transition: all 1.5s step-end;
+}
+
+.container-circle:hover .circle1,
+.container-circle:hover .circle2,
+.container-circle:hover .circle3,
+.container-circle:hover .circle4,
+.container-circle:hover .circle5 {
+    transform: translateX(300px);
+    
+}
+
+
+.square1, .square2 {
+    border-radius: 5px;
+    height: 150px;
+    width: 150px;
+    margin: 100px;
+    position: absolute; /* pone un cuadrado encima del otro, en una posicion fija */
+}
+
+.square1 {
+    background-color: royalblue;
+}
+.square2{
+    background-color: salmon;
+    transition: all 2s;
+}
+
+.square2:hover{
+    transform: translate(50px,30px) /* los ejes son X, Y */
+    /* genero que el cuadrado se separe del otro la cantidad de px asignadas*/
+}
+
+
+.combinado {
+    background-color: violet;
+    height: 90px;
+    width: 90px;
+    margin: 50px auto; /* el auto es para que el margin este centrado */
+    transition: all 2s;
+
+}
+.combinado:hover {
+    transform: rotate(90deg) /* si lo ponemos en negativo, lo hace para el lado contrario */
+     scale(3) /* hacemos que se agrande en 3 escalas */
+     translateY(80px); /* hacemos que se mueva en el eje Y */
+}
+
+.animaciones{
+    width: 150px; /* altura */
+    height: 150px; /* ancho */
+    margin: 75px auto; /* el auto es para centrarlo */
+    background-color: mediumvioletred;
+}
+
+.animaciones:hover{
+    animation: change-color 5s ;
+} /* esto es una keyframe (pseudo clase) */
+
+@keyframes change-color{ /* estoy creando un comportamiento sobre el nombre de la animacion que le di */
+    10% {
+        background-color:yellow ; /* al 10% cambia de color */
+    }
+
+    25%{
+        border-radius: 50%; /* al 25% se hace un borde redondeado */
+    }
+
+    50%{
+        width: 300px; /* al 50% se hace más ancho */
+    }
+
+    75%{
+        background-color: rosybrown; /* al 75% vuelve a cambiar de color */
+    }
+
+    90%{
+        border-radius: 30% ; /* al 90% se hace un borde redondeado de 30% */
+    } /* y finalmente vuelve a su forma natural */
+
+} /* los % son para medir que quiero que pase en cada porciento del 100% de tiempo
+en este caso, los 5s que le pedimos */
